@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SocialHackApiApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(SocialHackApiApplication.class, args);
 	}

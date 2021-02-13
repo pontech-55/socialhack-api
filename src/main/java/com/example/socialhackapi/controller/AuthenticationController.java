@@ -15,18 +15,18 @@ public class AuthenticationController {
         this.authenticationService = authenticationService;
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/authentication/hi")
     public String hello() {
         return authenticationService.hello();
     }
 
-    @GetMapping("/register")
-    public String login() {
+    @GetMapping("/authentication/register")
+    public String register() {
         return "Yep, te has registrado y se te ha generado un token permanente. Te devuelvo un token temporal generado a partir del permanente.";
     }
 
-    @GetMapping("/login")
-    public String register() {
+    @GetMapping("/authentication/login")
+    public String login() {
         return "Yep, te has logueado. Te devuelvo un token temporal generado a partir del permanente.";
     }
 
