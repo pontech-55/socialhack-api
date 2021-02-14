@@ -37,7 +37,7 @@ public class Volunteering {
     public String toJson () {
         return "{\n" +
                 "\"id\" : " + "\"" + this.id + "\"," +
-                "\"centreId\" : " + "\"" + this.centerId + "\"," +
+                "\"centerId\" : " + "\"" + this.centerId + "\"," +
                 "\"title\" : " + "\"" + this.title + "\"," +
                 "\"description\" : " + "\"" + this.description + "\"," +
                 "\"urgency\" : " + "\"" + this.urgency + "\"," +
