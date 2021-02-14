@@ -34,7 +34,7 @@ public class User {
         return "{\n" +
                 "\"username\" : " + "\"" + this.username + "\"," +
                 "\"token\" : " + "\"" + this.hashedPassword + "\"," +
-                "\"isEntity\" : " + "\"" + this.isEntity + "\"," +
+                "\"isEntity\" : " + "\"" + this.isEntity + "\"" +
                 "}";
     }
 }
