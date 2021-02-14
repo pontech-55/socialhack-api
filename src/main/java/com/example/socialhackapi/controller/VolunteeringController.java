@@ -26,4 +26,15 @@ public class VolunteeringController {
             @RequestParam(value = "centerId", required = false, defaultValue = "") String centerId) {
         return new ResponseEntity<>(volunteeringService.findAll(urgency, duration, locality, centerId), HttpStatus.OK);
     }
+
+    @GetMapping("/volunteering/create")
+    public ResponseEntity<String> create(
+            @RequestParam(value = "urgency", required = false, defaultValue = "") String urgency,
+            @RequestParam(value = "duration", required = false, defaultValue = "") String duration,
+            @RequestParam(value = "locality", required = false, defaultValue = "") String locality,
+            @RequestParam(value = "centerId", required = false, defaultValue = "") String centerId,
+            @RequestParam(value = "description", required = false, defaultValue = "") String description,
+            @RequestParam(value = "title", required = false, defaultValue = "") String title) {
+        return new ResponseEntity<>(volunteeringService.create(urgency, duration, locality, centerId, description, title), HttpStatus.OK);
+    }
 }

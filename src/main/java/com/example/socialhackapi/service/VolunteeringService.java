@@ -37,4 +37,9 @@ public class VolunteeringService {
                 """);
         return json.toString();
     }
+
+    public String create(String urgency, String duration, String locality, String centerId, String description, String title) {
+        volunteeringRepository.save(new Volunteering(centerId, title, description, urgency, locality, duration));
+        return "Volunteering offer created successfully.";
+    }
 }
