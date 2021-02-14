@@ -11,7 +11,7 @@ public class Volunteering {
     private int id;
 
     @Column(value="ID_CENTROS")
-    private String centreId;
+    private String centerId;
 
     @Column(value="TITULO")
     private String title;
@@ -25,9 +25,9 @@ public class Volunteering {
     @Column(value="LOCALIDAD")
     private String locality;
 
-    public Volunteering(int id, String centreId, String title, String description, String urgency, String locality) {
+    public Volunteering(int id, String centerId, String title, String description, String urgency, String locality) {
         this.id = id;
-        this.centreId = centreId;
+        this.centerId = centerId;
         this.title = title;
         this.description = description;
         this.urgency = urgency;
@@ -37,7 +37,7 @@ public class Volunteering {
     public String toJson () {
         return "{\n" +
                 "\"id\" : " + "\"" + this.id + "\"," +
-                "\"centreId\" : " + "\"" + this.centreId + "\"," +
+                "\"centreId\" : " + "\"" + this.centerId + "\"," +
                 "\"title\" : " + "\"" + this.title + "\"," +
                 "\"description\" : " + "\"" + this.description + "\"," +
                 "\"urgency\" : " + "\"" + this.urgency + "\"," +
