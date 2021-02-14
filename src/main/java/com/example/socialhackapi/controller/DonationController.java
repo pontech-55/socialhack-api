@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +26,16 @@ public class DonationController {
             @RequestParam(value = "locality", required = false, defaultValue = "") String locality,
             @RequestParam(value = "centerId", required = false, defaultValue = "") String centerId) {
         return new ResponseEntity<>(donationService.findAll(urgency, item, locality, centerId), HttpStatus.OK);
+    }
+
+    @GetMapping("/donations/create")
+    public ResponseEntity<String> create(
+            @RequestParam(value = "urgency", required = false, defaultValue = "") String urgency,
+            @RequestParam(value = "item", required = false, defaultValue = "") String item,
+            @RequestParam(value = "locality", required = false, defaultValue = "") String locality,
+            @RequestParam(value = "centerId", required = false, defaultValue = "") String centerId,
+            @RequestParam(value = "description", required = false, defaultValue = "") String description) {
+        return new ResponseEntity<>(donationService.create(urgency, item, locality, centerId, description), HttpStatus.OK);
     }
 
 }

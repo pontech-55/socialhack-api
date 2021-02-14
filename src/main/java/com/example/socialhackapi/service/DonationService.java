@@ -1,7 +1,6 @@
 package com.example.socialhackapi.service;
 
 import com.example.socialhackapi.model.Donation;
-import com.example.socialhackapi.model.Volunteering;
 import com.example.socialhackapi.repository.DonationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +22,11 @@ public class DonationService {
         return createJsonFromList(donationsList);
     }
 
+    public String create(String urgency, String item, String locality, String centerId, String description) {
+        donationRepository.save(new Donation(centerId, description, urgency, locality, item));
+        return "Donation created successfully";
+    }
+
     private String createJsonFromList(List<Donation> donationsList) {
         StringBuilder json = new StringBuilder("""
                 {
@@ -38,4 +42,5 @@ public class DonationService {
                 """);
         return json.toString();
     }
+
 }

@@ -11,8 +11,6 @@ public class Donation {
     private int id;
     @Column(value="ID_CENTROS")
     private String centerId;
-    @Column(value="TITULO")
-    private String title;
     @Column(value="DESCRIPCION")
     private String description;
     @Column(value="URGENCIA")
@@ -22,10 +20,8 @@ public class Donation {
     @Column(value="ITEM")
     private String item;
 
-    public Donation(int id, String centerId, String title, String description, String urgency, String locality, String item) {
-        this.id = id;
+    public Donation(String centerId, String description, String urgency, String locality, String item) {
         this.centerId = centerId;
-        this.title = title;
         this.description = description;
         this.urgency = urgency;
         this.locality = locality;
@@ -36,7 +32,6 @@ public class Donation {
         return "{\n" +
                 "\"id\" : " + "\"" + this.id + "\"," +
                 "\"centerId\" : " + "\"" + this.centerId + "\"," +
-                "\"title\" : " + "\"" + this.title + "\"," +
                 "\"description\" : " + "\"" + this.description + "\"," +
                 "\"urgency\" : " + "\"" + this.urgency + "\"," +
                 "\"locality\" : " + "\"" + this.locality + "\"," +
