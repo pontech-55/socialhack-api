@@ -25,10 +25,11 @@ public class VolunteeringService {
     private String createJsonFromList(List<Volunteering> volunteeringList) {
         StringBuilder json = new StringBuilder("""
                 {
-                [
+                "data": [
                 """);
-        for(Volunteering volunteering : volunteeringList) {
-            json.append(volunteering.toJson());
+        for(int i = 0; i < volunteeringList.size(); i++) {
+            json.append(volunteeringList.get(i).toJson());
+            if(i != volunteeringList.size() - 1) json.append(",");
         }
         json.append("""
                 ]

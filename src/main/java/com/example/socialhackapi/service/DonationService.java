@@ -26,10 +26,11 @@ public class DonationService {
     private String createJsonFromList(List<Donation> donationsList) {
         StringBuilder json = new StringBuilder("""
                 {
-                [
+                "data": [
                 """);
-        for(Donation donation : donationsList) {
-            json.append(donation.toJson());
+        for(int i = 0; i < donationsList.size(); i++) {
+            json.append(donationsList.get(i).toJson());
+            if(i != donationsList.size() - 1) json.append(",");
         }
         json.append("""
                 ]
