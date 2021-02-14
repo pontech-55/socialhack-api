@@ -14,7 +14,7 @@ public class CenterService {
         this.centerRepository = centerRepository;
     }
 
-    public String findCenterById(Long id) {
+    public String findCenterById(String id) {
         return centerRepository.findCenterById(id).toJson();
     }
 }

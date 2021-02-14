@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CenterRepository extends CrudRepository<Center, Long> {
-    @Query("select * from CENTROS where ID = :id")
-    Center findCenterById(@Param("id") Long id);
+    @Query("select * from centros where ID = :id")
+    Center findCenterById(@Param("id") String id);
 }

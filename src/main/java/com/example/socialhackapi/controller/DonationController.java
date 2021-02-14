@@ -1,6 +1,6 @@
 package com.example.socialhackapi.controller;
 
-import com.example.socialhackapi.service.VolunteeringService;
+import com.example.socialhackapi.service.DonationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,21 +9,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class VolunteeringController {
+public class DonationController {
 
-    private final VolunteeringService volunteeringService;
+    private final DonationService donationService;
 
     @Autowired
-    public VolunteeringController(VolunteeringService volunteeringService) {
-        this.volunteeringService = volunteeringService;
+    public DonationController(DonationService donationService) {
+        this.donationService = donationService;
     }
 
-    @GetMapping("/volunteering")
+    @GetMapping("/donations")
     public ResponseEntity<String> register(
             @RequestParam(value = "urgency", required = false, defaultValue = "") String urgency,
-            @RequestParam(value = "duration", required = false, defaultValue = "") String duration,
+            @RequestParam(value = "item", required = false, defaultValue = "") String item,
             @RequestParam(value = "locality", required = false, defaultValue = "") String locality,
             @RequestParam(value = "centerId", required = false, defaultValue = "") String centerId) {
-        return new ResponseEntity<>(volunteeringService.findAll(urgency, duration, locality, centerId), HttpStatus.OK);
+        return new ResponseEntity<>(donationService.findAll(urgency, item, locality, centerId), HttpStatus.OK);
     }
+
 }

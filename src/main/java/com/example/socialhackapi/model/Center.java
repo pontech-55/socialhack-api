@@ -4,12 +4,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table(value = "CENTROS")
+@Table(value = "centros")
 public class Center {
 
     @Id
     @Column(value = "ID")
-    private Long id;
+    private String id;
 
     @Column(value = "NODE")
     private String name;
@@ -50,7 +50,7 @@ public class Center {
     //private Set<Donations> donations;
     //private Set<Volunteering> volunteering;
 
-    public Center(Long id, String name, String address,
+    public Center(String id, String name, String address,
                   String council, String postalCode, String phone,
                   String email, String type, String entityName,
                   Boolean nonProfit, String activity, String web, String description) {

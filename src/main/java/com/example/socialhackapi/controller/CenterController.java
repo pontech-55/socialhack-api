@@ -20,7 +20,7 @@ public class CenterController {
 
     @GetMapping("/center")
     public ResponseEntity<String> findCenter(
-            @RequestParam(value = "id") Long id) {
+            @RequestParam(value = "id") String id) {
         return new ResponseEntity<>(centerService.findCenterById(id), HttpStatus.OK);
     }
 

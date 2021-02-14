@@ -4,13 +4,14 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table(value = "USUARIOS")
+@Table(value = "usuarios")
 public class User {
     @Id
     @Column(value="ID")
     private Long id;
     @Column(value="NOME")
     private String username;
+
     @Column(value="EMAIL")
     private String email;
     @Column(value="PASSWORD")
@@ -28,6 +29,14 @@ public class User {
 
     public void setHashedPassword (String hashedPassword) {
         this.hashedPassword = hashedPassword;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public Boolean getEntity() {
+        return isEntity;
     }
 
     public String toJson () {

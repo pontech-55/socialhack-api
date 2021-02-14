@@ -4,32 +4,32 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table(value = "DONACIONES")
+@Table(value = "donaciones")
 public class Donation {
     @Id
     @Column(value="ID")
-    private long id;
+    private int id;
     @Column(value="ID_CENTROS")
-    private long centerId;
+    private String centerId;
     @Column(value="TITULO")
     private String title;
     @Column(value="DESCRIPCION")
     private String description;
     @Column(value="URGENCIA")
     private String urgency;
-    @Column(value="TIPO")
-    private String type;
-    @Column(value="CONTACTO")
-    private String contact;
+    @Column(value="LOCALIDAD")
+    private String locality;
+    @Column(value="ITEM")
+    private String item;
 
-    public Donation(long id, long centerId, String title, String description, String urgency, String type, String contact) {
+    public Donation(int id, String centerId, String title, String description, String urgency, String locality, String item) {
         this.id = id;
         this.centerId = centerId;
         this.title = title;
         this.description = description;
         this.urgency = urgency;
-        this.type = type;
-        this.contact = contact;
+        this.locality = locality;
+        this.item = item;
     }
 
     public String toJson () {
@@ -39,8 +39,8 @@ public class Donation {
                 "\"title\" : " + "\"" + this.title + "\"," +
                 "\"description\" : " + "\"" + this.description + "\"," +
                 "\"urgency\" : " + "\"" + this.urgency + "\"," +
-                "\"type\" : " + "\"" + this.type + "\"," +
-                "\"contact\" : " + "\"" + this.contact + "\"" +
+                "\"locality\" : " + "\"" + this.locality + "\"," +
+                "\"item\" : " + "\"" + this.item + "\"" +
                 "}";
     }
 }
