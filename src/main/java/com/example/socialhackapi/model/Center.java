@@ -38,10 +38,22 @@ public class Center {
     @Column(value = "ENT_ANIMO_LUCRO")
     private Boolean nonProfit;
 
+    @Column(value = "ACTIVIDAD")
+    private String activity;
+
+    @Column(value = "WEB")
+    private String web;
+
+    @Column(value = "DESCRIPCION")
+    private String description;
+
     //private Set<Donations> donations;
     //private Set<Volunteering> volunteering;
 
-    public Center(Long id, String name, String address, String council, String postalCode, String phone, String email, String type, String entityName, Boolean nonProfit) {
+    public Center(Long id, String name, String address,
+                  String council, String postalCode, String phone,
+                  String email, String type, String entityName,
+                  Boolean nonProfit, String activity, String web, String description) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -52,9 +64,12 @@ public class Center {
         this.type = type;
         this.entityName = entityName;
         this.nonProfit = nonProfit;
+        this.activity = activity;
+        this.web = web;
+        this.description = description;
     }
 
-    public String toJson () {
+    public String toJson() {
         return "{\n" +
                 "\"id\" : " + "\"" + this.id + "\"," +
                 "\"name\" : " + "\"" + this.name + "\"," +
@@ -65,7 +80,10 @@ public class Center {
                 "\"email\" : " + "\"" + this.email + "\"," +
                 "\"type\" : " + "\"" + this.type + "\"," +
                 "\"entityName\" : " + "\"" + this.entityName + "\"," +
-                "\"nonProfit\" : " + "\"" + this.nonProfit + "\"" +
+                "\"nonProfit\" : " + "\"" + this.nonProfit + "\"," +
+                "\"activity\" : " + "\"" + this.activity + "\"," +
+                "\"web\" : " + "\"" + this.web + "\"," +
+                "\"description\" : " + "\"" + this.description + "\"" +
                 "}";
     }
 

@@ -4,44 +4,43 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table(value = "VOLUNTARIADO")
-public class Volunteering {
+@Table(value = "DONACIONES")
+public class Donation {
     @Id
     @Column(value="ID")
-    private int id;
-
+    private long id;
     @Column(value="ID_CENTROS")
-    private String centreId;
-
+    private long centerId;
     @Column(value="TITULO")
     private String title;
-
     @Column(value="DESCRIPCION")
     private String description;
-
     @Column(value="URGENCIA")
     private String urgency;
+    @Column(value="TIPO")
+    private String type;
+    @Column(value="CONTACTO")
+    private String contact;
 
-    @Column(value="LOCALIDAD")
-    private String locality;
-
-    public Volunteering(int id, String centreId, String title, String description, String urgency, String locality) {
+    public Donation(long id, long centerId, String title, String description, String urgency, String type, String contact) {
         this.id = id;
-        this.centreId = centreId;
+        this.centerId = centerId;
         this.title = title;
         this.description = description;
         this.urgency = urgency;
-        this.locality = locality;
+        this.type = type;
+        this.contact = contact;
     }
 
     public String toJson () {
         return "{\n" +
                 "\"id\" : " + "\"" + this.id + "\"," +
-                "\"centreId\" : " + "\"" + this.centreId + "\"," +
+                "\"centerId\" : " + "\"" + this.centerId + "\"," +
                 "\"title\" : " + "\"" + this.title + "\"," +
                 "\"description\" : " + "\"" + this.description + "\"," +
                 "\"urgency\" : " + "\"" + this.urgency + "\"," +
-                "\"locality\" : " + "\"" + this.locality + "\"" +
+                "\"type\" : " + "\"" + this.type + "\"," +
+                "\"contact\" : " + "\"" + this.contact + "\"" +
                 "}";
     }
 }
